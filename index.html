@@ -571,24 +571,22 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
     <script src="assets/js/theme.js"></script>
     <script>
-        function scrollToHashElement() {
-            if (window.location.hash) {
-                var element = document.getElementById(window.location.hash.substring(1));
-                if (element) {
-                    setTimeout(function() {
-                        element.scrollIntoView({ behavior: 'smooth' });
-                    }, 500);
-                    return true;
-                }
-            }
-            return false;
-        }
-
-        window.onload = function() {
+      function scrollToHashElement() {
+        if (window.location.hash) {
+          var element = document.getElementById(window.location.hash.substring(1));
+          if (element) {
             setTimeout(function() {
-                scrollToHashElement();
-            }, 500);
-        };
+                element.scrollIntoView();
+            }, 1000);
+            return true;
+          }
+        }
+        return false;
+      }
+
+      window.onload = function() {
+        scrollToHashElement();
+      };
     </script>
   </body>
 
